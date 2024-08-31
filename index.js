@@ -18,7 +18,7 @@ app.use(express.json({ extended: true, limit: "5mb" }))
 app.use(express.urlencoded({ extended: true, limit: "5mb" }))
 
 app.use(morgan("dev"))
-// app.use("/product", route)
+
 
 app.use("/user", route)
 app.use("/product",prod_router)
