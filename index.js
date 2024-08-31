@@ -9,7 +9,8 @@ const order_router = require("./Routes/Orderroutes.js");
 require("dotenv").config()
 
 const app = express()
-app.use(cors())
+app.use(cors());
+
 
 app.use(bodyParser.json({ extended: true, limit: "5mb" }))
 app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }))
@@ -17,7 +18,7 @@ app.use(express.json({ extended: true, limit: "5mb" }))
 app.use(express.urlencoded({ extended: true, limit: "5mb" }))
 
 app.use(morgan("dev"))
-// app.use("/product", route)
+
 
 app.use("/user", route)
 app.use("/product",prod_router)
