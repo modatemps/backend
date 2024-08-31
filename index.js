@@ -9,7 +9,12 @@ const order_router = require("./Routes/Orderroutes.js");
 require("dotenv").config()
 
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:5173', // or an array of allowed origins
+    methods: 'GET,POST,PUT,DELETE', // or your required methods
+    allowedHeaders: 'Content-Type,Authorization' // or other headers you need
+}));
+
 
 app.use(bodyParser.json({ extended: true, limit: "5mb" }))
 app.use(bodyParser.urlencoded({ extended: true, limit: "5mb" }))
